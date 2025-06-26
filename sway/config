@@ -16,16 +16,16 @@ set $right l
 # Your preferred terminal emulator
 set $term kitty
 # Your preferred application launcher
-set $menu wofi --show drun
+set $menu pgrep wofi >/dev/null 2>&1 killall wofi || wofi --show drun
 
 set $file_explorer nautilus
 
-bindsym $mod+e $file_explorer
+bindsym $mod+e exec $file_explorer
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/techminer/Pictures/wallpapers/Swordfish.jpg fill
 #
 # Example configuration:
 #
@@ -45,20 +45,33 @@ output Virtual-1 resolution 1920x1080 position 0,0
 #                                                                                                                             #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                                                             #
+# Heres what i have so far for my color pallet thats Cowboy   #
+# Bebop themed                                                #
+#     #343434  #403E56  #635B2A #6E8C8A  #E9C971  #B03029     #
+#                                                             #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
 # gaps
 gaps inner 8px
 gaps outer 8px
 
 # border size
-default_border pixel 1px
-default_floating_border pixel 1px
+default_border pixel 2px
+default_floating_border pixel 2px
 
-# border color              border     bg     text    ind   c_border
-client.focused              #000000 #000000 #000000 #000000 #000000
-client.focused_inactive     #000000 #000000 #000000 #000000 #000000
-client.unfocused            #000000 #000000 #000000 #000000 #000000
-client.urgent               #000000 #000000 #000000 #000000 #000000
-client.placeholder          #000000 #000000 #000000 #000000 #000000
+
+
+# border color             |border  |bg      |text    |ind     |c_border
+client.focused              #E9C971  #343434  #E9C971  #E9C971  #E9C971
+client.focused_inactive     #635B2A  #343434  #6E8C8A  #635B2A  #635B2A
+client.unfocused            #403E56  #343434  #6E8C8A  #403E56  #403E56
+client.urgent               #B03029  #343434  #E9C971  #B03029  #B03029
+client.placeholder          #403E56  #343434  #E9C971  #403E56  #403E56
+
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #                                                                                                                             #
@@ -192,7 +205,7 @@ client.placeholder          #000000 #000000 #000000 #000000 #000000
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    # bindsym $mod+e layout toggle split
+    bindsym $mod+Mod1+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -260,17 +273,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 include /etc/sway/config.d/*

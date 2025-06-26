@@ -1,0 +1,100 @@
+* {
+  /* General taskbar font, I like maple mono ^-^*/
+  font-family: Maple Mono;
+  border-radius: 8;
+  font-size: 14px;
+  padding: 0px;
+  background: transparent;
+}
+
+window#waybar {
+  /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
+  background-image: linear-gradient(to bottom, #343434 100%);
+  border-radius: 14px;
+  padding: 0px;
+  border-style: none;
+}
+
+#network,
+#clock,
+#custom-applauncher,
+#tray,
+#workspaces,
+#pulseaudio {
+  background-image: linear-gradient(to bottom, #403E56 100%);
+
+  margin: 6px;
+  margin-right: 0px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: #E9C971;
+
+  border-style: none;
+  transition-duration: 120ms;
+}
+
+#clock {
+  margin-right: 6px;
+}
+
+#pulseaudio:hover {
+  background-image: linear-gradient(to bottom, #6E8C8A 100%);
+  color: #343434;
+  transition-duration: 120ms;
+}
+
+#custom-applauncher {
+  font-weight: bold;
+  transition-duration: 120ms;
+}
+#custom-applauncher:hover {
+  background-image: linear-gradient(to bottom, #6E8C8A 100%);
+  color: #343434;
+  transition-duration: 120ms;
+}
+
+#tray menu {
+  background-color: #343434;
+  color: #E9C971;
+  padding: 4px;
+}
+#tray menu menuitem {
+  background-image: linear-gradient(to bottom, #403E56 100%);
+
+  margin: 3px;
+  color: #E9C971;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #403E56;
+}
+#tray menu menuitem:hover {
+  background-image: linear-gradient(to bottom, #403E56 100%);
+  color: #6E8C8A;
+  font-weight: bold;
+}
+
+#workspaces button {
+  transition-duration: 100ms;
+  all: initial;
+  min-width: 0;
+  font-weight: bold;
+  color: #E9C971;
+  margin-right: 0.2cm;
+  margin-left: 0.2cm;
+}
+
+#workspaces button:hover {
+  transition-duration: 120ms;
+  color: #635B2A;
+}
+#workspaces button.focused {
+  color: #6E8C8A;
+  font-weight: bold;
+}
+#workspaces button.active {
+  color: #6E8C8A;
+  font-weight: bold;
+}
+#workspaces button.urgent {
+  color: #B03029;
+}
