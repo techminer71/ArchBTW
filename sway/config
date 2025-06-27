@@ -45,14 +45,17 @@ output Virtual-1 resolution 1920x1080 position 0,0
 #                                                                                                                             #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#                                                             #
-# Heres what i have so far for my color pallet thats Cowboy   #
-# Bebop themed                                                #
-#     #343434  #403E56  #635B2A #6E8C8A  #E9C971  #B03029     #
-#                                                             #
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #─┒
+#                                                             # ┃
+# Heres what i have so far for my color pallet thats Cowboy   # ┃
+# Bebop themed                                                # ┃
+#     #343434  #403E56  #635B2A #6E8C8A  #E9C971  #B03029     # ┃
+#                                                             # ┃
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ┃
+#───────────────────────────────────────────────────────────────┚
 
+# Execute the Start.sh command for EWW
+exec_always ~/.config/eww/scripts/start.sh
 
 # gaps
 gaps inner 8px
