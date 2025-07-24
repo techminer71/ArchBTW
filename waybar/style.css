@@ -11,7 +11,7 @@ window#waybar {
   /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
   background-image: linear-gradient(to bottom, #343434 100%);
   border-radius: 14px;
-  padding: 0px;
+  padding: 1px;
   border-style: none;
 }
 
@@ -24,7 +24,7 @@ window#waybar {
   background-image: linear-gradient(to bottom, #403E56 100%);
 
   margin: 6px;
-  margin-right: 0px;
+  margin-right: 5px;
   padding: 4px 8px;
   border-radius: 8px;
   color: #E9C971;
@@ -78,7 +78,7 @@ window#waybar {
   all: initial;
   min-width: 0;
   font-weight: bold;
-  color: #E9C971;
+  color: #6E8C8A;
   margin-right: 0.2cm;
   margin-left: 0.2cm;
 }
@@ -92,7 +92,7 @@ window#waybar {
   font-weight: bold;
 }
 #workspaces button.active {
-  color: #6E8C8A;
+  color: #E9C971;
   font-weight: bold;
 }
 #workspaces button.urgent {

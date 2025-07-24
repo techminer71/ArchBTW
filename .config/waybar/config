@@ -1,0 +1,69 @@
+{
+    "layer": "bot",
+    "spacing": 0,
+    "height": 0,
+    "margin-bottom": 5,
+    "margin-top": 5,
+    "position": "top",
+    "margin-right": 500,
+    "margin-left": 500,
+
+    "modules-left": ["hyprland/workspaces", "custom/theme-switcher"],
+    "modules-center": ["custom/applauncher"],
+    "modules-right": ["network", "pulseaudio", "tray", "clock"],    
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+          "urgent": "",
+          "active": "", // focused workspace on current monitor 
+          "visible": "", // focused workspace on other monitors
+          "default": "",
+          "empty": "" // persistent (created by this plugin)
+        },
+      "all-outputs": false // recommended
+    },
+
+    "custom/applauncher": {
+        "format": "◯",
+        "on-click": "pgrep wofi >/dev/null 2>&1 killall wofi || wofi --show drun --location=top -y 15",
+        "tooltip": false
+    },
+
+    "custom/theme-switcher": {
+      "format": "<U+F08C7>",
+      "tooltip": false,
+      "on-click": "~/.config/waybar/change-theme.sh",
+    },
+
+    "tray": {
+        "spacing": 10,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": " {:%H:%M}",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": " {bandwidthDownBits}",
+        "format-ethernet": " {bandwidthDownBits}",
+        "format-disconnected": " No Network",
+        "interval": 5,
+        "tooltip": false
+    },
+    
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 150,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-icont": [" ", " ", "  "],
+        "nospacing": 1,
+        "format-muted": "  ",
+        "on-click": "pavucontrol",
+        "tooltip": false
+    }
+
+}
